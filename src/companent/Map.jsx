@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 
+/*global kakao*/
 function Map() {
     useEffect(() => {
         const container = document.getElementById("kakao-map");
         const options = {
-            center: new kakao.maps.LatLng(37.566826, 126.9786567),
-            level: 3,
+            center: new kakao.maps.LatLng(36.628113354779614, 127.45698538088607),
+            level: 4,
         };
 
         const map = new kakao.maps.Map(container, options);
@@ -15,7 +16,7 @@ function Map() {
         };
     }, []);
 
-    return <div id="kakao-map" style={{ width: "500px", height: "500px" }} />;
+    return <div id="kakao-map" style={{ width: "630px", height: "630px" }} />;
 }
 
 export default Map;
