@@ -1,11 +1,31 @@
-import React from "react";
-import './Upload.css';
+import React, {useState} from "react";
+import classes from "./Upload.module.css";
+import UploadBox from "./UploadBox";
+
+
 function Upload() {
 
-    //업로드 버튼 생성
-        return (
-            <button className="button-wrapper"></button>
-        );
+    //Overlay on/off 구현
+    const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+    const handleButtonClick = () => {
+        setIsOverlayOpen(true);
     };
+
+    const handleOverlayClose = () => {
+        setIsOverlayOpen(false);
+    };
+
+
+    return (
+
+        <>
+            {/*업로드 버튼 생성*/}
+            <button className={classes.buttonWrapper} onClick={handleButtonClick}></button>
+            {/*업로드 버튼 클릭시 오버레이 키고 x버튼 누를 시오버레이 끄기*/}
+            {isOverlayOpen && <UploadBox onClose={handleOverlayClose}/>}
+        </>
+    );
+};
 
 export default Upload;
