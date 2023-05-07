@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import classes from "./Upload.module.css";
 import UploadBox from "./UploadBox";
+import Modal from "./Modal";
 
 
 function Upload() {
@@ -23,7 +24,10 @@ function Upload() {
             {/*업로드 버튼 생성*/}
             <button className={classes.buttonWrapper} onClick={handleButtonClick}></button>
             {/*업로드 버튼 클릭시 오버레이 키고 x버튼 누를 시오버레이 끄기*/}
-            {isOverlayOpen && <UploadBox onClose={handleOverlayClose}/>}
+
+
+
+            {isOverlayOpen && <Modal onClose={handleOverlayClose}><UploadBox /></Modal>}
         </>
     );
 };
