@@ -7,6 +7,31 @@
       "description": "This is a cute cat",
       "imageUrl": "https://blog.kakaocdn.net/dn/tEMUl/btrDc6957nj/NwJoDw0EOapJNDSNRNZK8K/img.jpg",
       "uploadTime": "2022-05-10 12:34:56"
+    },
+    {
+      "id": 2,
+      "y": 36.628603342656945,
+      "x": 127.45999054547278,
+      "description": "This is a another cat",
+      "imageUrl": "https://images.pexels.com/photos/177809/pexels-photo-177809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "uploadTime": "2022-05-10 12:34:56"
+    },
+    {
+      "id": 3,
+      "y": 36.62606609423295,
+      "x": 127.45601629758723,
+      "description": "This is a another cat3",
+      "imageUrl": "https://img.freepik.com/free-photo/close-up-portrait-on-beautiful-cat_23-2149214373.jpg",
+      "uploadTime": "2022-05-10 12:34:56"
+    },
+    {
+      "id": 4,
+      "y": 36.63097869360698,
+      "x": 127.45799066225949,
+      "description": "This is a another cat4",
+      "imageUrl": "https://cdn.edujin.co.kr/news/photo/202105/35768_68227_247.jpg",
+      "uploadTime": "2022-05-10 12:34:56"
     }
+
   ]
 }
