@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import data from "../db/data.json"
+import classes from "./Map.module.css";
 
 /*global kakao*/
 function Map() {
@@ -18,13 +18,11 @@ function Map() {
         map.setMaxLevel(4);
         map.setMinLevel(2);
 
-
-
         return () => {
             kakao.maps.event.removeListener(map, "dragend");
         };
     }, []);
 
-    return <div id="kakao-map" style={{ width: "630px", height: "630px" }} />;
+    return <div className={classes.map} id="kakao-map" />;
 }
 export default Map;
