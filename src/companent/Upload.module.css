@@ -1,14 +1,14 @@
 /*업로드 버튼*/
 .buttonWrapper {
     position: fixed;
-    left: 95%;
+    left: 90%;
     bottom: 10px;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: #6233b9;
-    background-image: url("../image/banana-cat-crying-cat.gif");
+    background-image: url("image/banana-cat-crying-cat.gif");
     background-size: cover;
     border: none;
     cursor: pointer;

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import classes from "./Upload.module.css";
-import UploadBox from "../UploadBox";
-import Modal from "../Modal";
+import UploadBox from "./UploadBox";
+import Modal from "./Modal";
 
 
 function Upload() {
