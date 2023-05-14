@@ -4,14 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import UploadBox from "./companent/UploadBox";
 import RootLayout from "./companent/routes/RootLayout";
 import MapShowAll from "./companent/MapShowAll";
 
 const router = createBrowserRouter([
     { path: '/', element: <RootLayout />, children : [
             { path : '/', element: <App /> },
-            { path : '/upload', element: <UploadBox />},
             { path: '/show-all', element: <MapShowAll />}
         ]}
 
