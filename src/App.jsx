@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Map from "./companent/Map";
-import Upload from "./companent/routes/Upload";
+import Upload from "./companent/Upload";
 import ToShowAll from "./companent/ToShowAll";
 
 function App() {
