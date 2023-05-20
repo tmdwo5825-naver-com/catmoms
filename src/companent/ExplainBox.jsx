@@ -29,24 +29,19 @@ function ExplainBox({ marker, onCloseExplainBox }) {
         };
     }, []);
 
-    const handleExplainBox = () => {
-        onCloseExplainBox();
-    };
 
     return (
-        <div className={classes.form}>
-            <div className={classes.modal}>
-                <div className={classes.modalHeader}>
-                    <button className={classes.btnClose} onClick={handleExplainBox}>X</button>
-                    <p>Upload Time: {marker.uploadTime}</p>
+        <div className={classes.container}>
+            <div className={classes.form}>
+                    <img ref={imageRef} src={marker.imageUrl} alt="Cat Image" className={classes.image}/>
+                <div className={classes.form2}>
+                    <p><label>Upload Time: {marker.uploadTime}</label></p>
+                    <textarea>{marker.description}</textarea>
                 </div>
-                <div>
-                    <img ref={imageRef} src={marker.imageUrl} alt="Cat Image" className={classes.image} />
-                </div>
-                <div>{marker.description}</div>
             </div>
 
         </div>
+
     );
 }
 
