@@ -72,7 +72,6 @@ function MapShowAll() {
                 <ClearModal onCloseExplainBox={closeExplainBox}>
                     <ExplainBox
                         marker={selectedMarker}
-                        onCloseExplainBox={closeExplainBox}
                     />
                 </ClearModal>
 
