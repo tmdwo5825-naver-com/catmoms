@@ -5,6 +5,7 @@ import ToShowAll from "./ToShowAll";
 import Map from "./Map";
 import ExplainBox from "./ExplainBox";
 import ClearModal from "./ClearModal";
+import NavigateBar from "./NavigateBar";
 
 
 
@@ -66,8 +67,7 @@ function MapShowAll() {
     return (
         <>
             <Map onMarkerClick={handleMarkerClick} />
-            <Upload />
-            <ToShowAll />
+            <NavigateBar />
             {selectedMarker && (
                 <ClearModal onCloseExplainBox={closeExplainBox}>
                     <ExplainBox

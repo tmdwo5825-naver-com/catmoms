@@ -4,11 +4,9 @@ import classes from "./ToShowAll.module.css";
 
 function ShowAllButton() {
     const navigate = useNavigate();
-
     const handleButtonClick = () => {
         navigate('/show-all');
     };
-
 
     return (
         <button className={classes.buttonWrapper2} onClick={handleButtonClick}>

@@ -1,0 +1,28 @@
+.bottomBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+.bottomButton {
+    flex: 1;
+    height: 100%;
+    font-size: 16px;
+    background-color: #ffffff;
+    border: none;
+    display: flex;                 /* flex 속성을 사용하여 아이콘 및 텍스트를 정렬 */
+    flex-direction: column;        /* 컬럼 방향으로 요소를 정렬 */
+    justify-content: center;       /* 버튼 내용을 중앙으로 정렬 */
+    align-items: center;           /* 버튼 내용을 가운데로 정렬 */
+}
+
+.bottomButton:focus {
+    outline: none;
+}
