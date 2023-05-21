@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RootLayout from "./companent/routes/RootLayout";
 import MapShowAll from "./companent/MapShowAll";
+import IntroPage from "./IntroPage";
 
 const router = createBrowserRouter([
     { path: '/', element: <RootLayout />, children : [
-            { path : '/', element: <App /> },
+            { path : '/', element: <IntroPage /> },
+            { path : '/3hours', element: <App /> },
             { path: '/show-all', element: <MapShowAll />}
         ]}
 

@@ -9,7 +9,7 @@ function NavigateBar(){
         navigate('/show-all');
     };
     const to3 = () => {
-        navigate('/');
+        navigate('/3hours');
     };
 
     //Overlay on/off 구현
