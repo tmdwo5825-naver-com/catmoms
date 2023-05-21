@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import classes from "./IntroPage.module.css";
 
 const IntroPage = () => {
     const navigate = useNavigate();
@@ -25,12 +26,17 @@ const IntroPage = () => {
         }, 4000); // 4초 후 메인 페이지로 이동
 
         return () => clearTimeout(timer); // 컴포넌트가 unmount되면 타이머를 정리
-    }, [navigate()]);
+    }, [navigate]);
 
     return ( //디자인은 후에 바꿀것
-        <div>
-            <h1>충냥이</h1>
-            <p> 효율적인 고양이 추적사이트 </p>
+        <div
+            style={{
+                overflow: 'hidden',
+            }}
+        >
+            <div className={classes.background}> </div>
+            <div className={classes.text1}>충냥이</div>
+            <div className={classes.text2}>고양이 위치 찾기 플랫폼</div>
         </div>
     );
 };
