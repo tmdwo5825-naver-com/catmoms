@@ -1,50 +1,45 @@
 import React, { useState, useEffect } from "react";
 import data from "../db/data.json";
-import Upload from "./Upload";
-import ToShowAll from "./ToShowAll";
 import Map from "./Map";
 import ExplainBox from "./ExplainBox";
 import ClearModal from "./ClearModal";
 import NavigateBar from "./NavigateBar";
+import { convertImageToCircle } from "./CircleImage";
 
+/* global kakao */
 
-
-/*global kakao*/
 function MapShowAll() {
     const [selectedMarker, setSelectedMarker] = useState(null);
 
     const handleMarkerClick = (markerData) => {
-        setSelectedMarker(markerData); // 선택한 마커 정보를 상태에 저장
+        setSelectedMarker(markerData);
     };
 
     const closeExplainBox = () => {
-        setSelectedMarker(null); // 오버레이 닫을 때 선택한 마커 정보 초기화
+        setSelectedMarker(null);
     };
 
     useEffect(() => {
         const container = document.getElementById("kakao-map");
 
-        // 카카오 맵 띄우기
         const options = {
             center: new kakao.maps.LatLng(36.628113354779614, 127.45698538088607),
-            draggable: false,
+            // draggable: false,// 맵 드래그 불가
             level: 4,
         };
 
         const map = new kakao.maps.Map(container, options);
-        // 최대, 최소 축척 레벨 설정
         map.setMaxLevel(4);
         map.setMinLevel(2);
 
-        // 데이터에서 좌표와 이미지 가져와서 마커 생성
-        data.data.forEach((item) => {
+        const createMarker = async (item) => {
             const position = new kakao.maps.LatLng(item.y, item.x);
+            const markerImageUrl = await convertImageToCircle(item.imageUrl);//마커 이미지를 원으로 수정하여 설정
 
-            // 마커 이미지 생성
             const markerImage = new kakao.maps.MarkerImage(
-                item.imageUrl, // 이미지 URL
+                markerImageUrl,
                 new kakao.maps.Size(60, 60),
-                { offset: new kakao.maps.Point(12, 35) }
+                { offset: new kakao.maps.Point(30, 30) }
             );
 
             const marker = new kakao.maps.Marker({
@@ -53,10 +48,13 @@ function MapShowAll() {
             });
             marker.setMap(map);
 
-            // 마커 클릭 이벤트 리스너 등록
             kakao.maps.event.addListener(marker, "click", () => {
-                handleMarkerClick(item); // 선택한 마커 정보를 핸들러에 전달
+                handleMarkerClick(item);
             });
+        };
+
+        data.data.forEach((item) => {
+            createMarker(item);
         });
 
         return () => {
@@ -70,11 +68,8 @@ function MapShowAll() {
             <NavigateBar />
             {selectedMarker && (
                 <ClearModal onCloseExplainBox={closeExplainBox}>
-                    <ExplainBox
-                        marker={selectedMarker}
-                    />
+                    <ExplainBox marker={selectedMarker} />
                 </ClearModal>
-
             )}
         </>
     );
