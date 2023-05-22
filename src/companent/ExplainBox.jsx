@@ -11,14 +11,9 @@ function ExplainBox({ marker, onCloseExplainBox }) {
             const containerWidth = container.offsetWidth;
             const containerHeight = container.offsetHeight;
             const imageRatio = image.naturalWidth / image.naturalHeight;
-
-            if (containerWidth / containerHeight > imageRatio) {
-                image.style.width = "100%";
-                image.style.height = "auto";
-            } else {
-                image.style.width = "auto";
-                image.style.height = "100%";
-            }
+            //ExplainBox에서 고양이 사진 비율
+            image.style.width = "100%";
+            image.style.height = "100%";
         };
 
         window.addEventListener("resize", resizeImage);
@@ -36,7 +31,7 @@ function ExplainBox({ marker, onCloseExplainBox }) {
                     <img ref={imageRef} src={marker.imageUrl} alt="Cat Image" className={classes.image}/>
                 <div className={classes.form2}>
                     <p><label>Upload Time: {marker.uploadTime}</label></p>
-                    <textarea>{marker.description}</textarea>
+                    <textarea value={marker.description} readOnly />
                 </div>
             </div>
 
