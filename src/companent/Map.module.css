@@ -1,6 +1,7 @@
 .map{
     box-sizing: border-box;
     position: relative;
+    margin-top : 1.5%;
     width: 90vw;
     height: 87vh;
     left: 5%;
