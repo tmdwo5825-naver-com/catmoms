@@ -7,12 +7,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RootLayout from "./companent/routes/RootLayout";
 import MapShowAll from "./companent/MapShowAll";
 import IntroPage from "./companent/IntroPage";
+import Map2 from "./companent/Map2";
 
 const router = createBrowserRouter([
     { path: '/', element: <RootLayout />, children : [
             { path : '/', element: <IntroPage /> },
             { path : '/3hours', element: <App /> },
-            { path: '/show-all', element: <MapShowAll />}
+            { path: '/show-all', element: <MapShowAll />},
+            { path: '/map2', element: <Map2 />}
         ]}
 
 
