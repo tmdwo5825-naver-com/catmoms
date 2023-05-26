@@ -37,7 +37,7 @@ function NavigateBar(){
                 <span className="material-icons">add</span>
                 <div>사진 추가</div>
             </button>
-            {isOverlayOpen && <Modal onClose={handleOverlayClose}><UploadBox /></Modal>}
+            {isOverlayOpen && <Modal onClose={handleOverlayClose}><UploadBox onSubmitSuccess={handleOverlayClose} /></Modal>}
         </div>
     )
 }
