@@ -45,20 +45,33 @@ function InputUpload({ onSubmitSuccess }){
             });
 
     }
+    const buttonStyle = {
+        position: "absolute",
+        top: "77%",
+        right: "47%",
+        width: "40px",
+        height: "40px",
+        border: "none",
+        backgroundColor: "transparent",
+        fontSize: "30px",
+        lineHeight: "1",
+        textAlign: "center",
+        cursor: "pointer"
+    };
 
     //업로드 버튼 클릭시 생성되는 박스
     return (
         <form className={classes.form} onSubmit={handleSubmit}>
             <p>
                 <label htmlFor="name">Upload Cat Image</label>
-                <input type="file" name="image" />
+                <input type="file" name="file" id="file" />
             </p>
             <p>
                 <label htmlFor="name">This Cat Is</label>
                 {/*onChange={changeTextHandler}는 textbox에 입력된 것을 받아주는 함수*/}
-                <input type="text" id="body" required rows="1" placeholder="Explain your CAT" onChange={changeTextHandler}></input>
+                <input type="text" id="body" required rows="1" placeholder="Explain your Cat" onChange={changeTextHandler}></input>
             </p>
-                <button type="submit">제출</button>
+                <button type="submit" class='material-icons' style={buttonStyle} >pets</button>
             </form>
     );
 };
