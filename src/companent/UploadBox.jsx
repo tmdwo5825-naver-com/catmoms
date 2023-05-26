@@ -11,13 +11,19 @@ function InputUpload({ onSubmitSuccess }){
 
     }
 
+    function handleGeolocationSuccess(pos) { // 위치 정보 업데이트 함수
+        setPosition(pos);
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         const formdata = new FormData();
         formdata.append("comment", enteredText); // 사용자가 입력한 텍스트
         formdata.append("image", event.target['image'].files[0], "20vt87.jpg");
-        formdata.append('latitude', position.coords.latitude);
-        formdata.append('longitude', position.coords.longitude);
+        if (position) {
+            formdata.append("latitude", position.coords.latitude);
+            formdata.append("longitude", position.coords.longitude);
+        }
 
         fetch("http://127.0.0.1:8000/content-create", {
             method: "POST",
