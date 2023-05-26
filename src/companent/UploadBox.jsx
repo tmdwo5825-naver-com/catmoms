@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import classes from "./UploadBox.module.css";
+import Geolocation from "./GeoLocation";
 
 function InputUpload({ onSubmitSuccess }){
     // textbox에 입력받은 것을 저장해주는 함수 구현
     const [enteredText, setEnteredText] = useState('')
+    const [position, setPosition] = useState(null);
     function changeTextHandler(event){
         setEnteredText(event.target.value);
 
@@ -14,6 +16,8 @@ function InputUpload({ onSubmitSuccess }){
         const formdata = new FormData();
         formdata.append("comment", enteredText); // 사용자가 입력한 텍스트
         formdata.append("image", event.target['image'].files[0], "20vt87.jpg");
+        formdata.append('latitude', position.coords.latitude);
+        formdata.append('longitude', position.coords.longitude);
 
         fetch("http://127.0.0.1:8000/content-create", {
             method: "POST",
