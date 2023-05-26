@@ -9,7 +9,6 @@ function Map() {
         //카카오 맵 띄우기
         const options = {
             center: new kakao.maps.LatLng(36.628113354779614, 127.45698538088607),
-            draggable: false,
             level: 4,
         };
 
