@@ -17,6 +17,25 @@ function Map() {
         map.setMaxLevel(4);
         map.setMinLevel(2);
 
+        function panTo() {
+            // 이동할 위도 경도 위치를 생성합니다
+            var moveLatLon = new kakao.maps.LatLng(36.628113354779614, 127.45698538088607);
+
+            // 지도 중심을 부드럽게 이동시킵니다
+            // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+            map.panTo(moveLatLon);
+        }
+
+        const button = document.createElement("button");
+        button.addEventListener("click", panTo);
+        button.className = classes.panToButton;
+        const icon = document.createElement("i");
+        icon.className = "material-icons";
+        icon.innerHTML = "my_location";
+        button.appendChild(icon);
+        container.appendChild(button);
+
+
         return () => {
             kakao.maps.event.removeListener(map, "dragend");
         };
