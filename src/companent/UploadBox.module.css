@@ -2,12 +2,12 @@
     position: fixed;
     left: 50%;
     bottom: 50%;
-    transform: translateX(-50%) translateY(-25%);
+    transform: translateX(-50%) translateY(-20%);
     background-color: white;
-    padding: 1rem;
     max-width: 20rem;
     width: 80%;
     height: 200px;
+    padding : 0.1rem 1rem 1rem 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 2);
     z-index: 1;
