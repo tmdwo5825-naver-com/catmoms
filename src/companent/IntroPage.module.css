@@ -31,21 +31,16 @@
 }
 
 .text1 {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    font-size: 90px;
+    font-size: 450%;
     font-weight: bold;
     color: #ffffff;
+    margin: 2px;
 }
 
 .text2 {
-    position: absolute;
-    top: 35%;
-    left: 31%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
+    font-size: 125%;
     font-weight: bold;
     color: #ffffff;
+    margin-left: 10px;
+    margin-top: 2px;
 }

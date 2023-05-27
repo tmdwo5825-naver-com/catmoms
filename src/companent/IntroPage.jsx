@@ -28,6 +28,12 @@ const IntroPage = () => {
         return () => clearTimeout(timer); // 컴포넌트가 unmount되면 타이머를 정리
     }, [navigate]);
 
+    const textDivStyle = {
+        top: "10%",
+        left: "5%",
+        position : "fixed",
+    };
+
     return ( //디자인은 후에 바꿀것
         <div
             style={{
@@ -35,8 +41,11 @@ const IntroPage = () => {
             }}
         >
             <div className={classes.background}> </div>
-            <div className={classes.text1}>충냥이</div>
-            <div className={classes.text2}>고양이 위치 찾기 플랫폼</div>
+            <div style={textDivStyle}>
+                <p className={classes.text1}>충냥이</p>
+                <p className={classes.text2}>고양이를 좋아하는 당신을 위해</p>
+            </div>
+
         </div>
     );
 };
