@@ -11,7 +11,6 @@ function ExplainBox({ marker, onCloseExplainBox }) {
             const containerWidth = container.offsetWidth;
             const containerHeight = container.offsetHeight;
             const imageRatio = image.naturalWidth / image.naturalHeight;
-            //ExplainBox에서 고양이 사진 비율
             image.style.width = "100%";
             image.style.height = "100%";
         };
@@ -24,19 +23,18 @@ function ExplainBox({ marker, onCloseExplainBox }) {
         };
     }, []);
 
+    console.log(marker); // Add this line to check marker data structure
 
     return (
         <div className={classes.container}>
             <div className={classes.form}>
-                    <img ref={imageRef} src={marker.imageUrl} alt="Cat Image" className={classes.image}/>
+                <img ref={imageRef} src={marker.url} alt="Cat Image" className={classes.image}/>
                 <div className={classes.form2}>
                     <p><label>Upload Time: {marker.uploadTime}</label></p>
-                    <textarea value={marker.description} readOnly />
+                    <textarea value={marker.comment} readOnly />
                 </div>
             </div>
-
         </div>
-
     );
 }
 
