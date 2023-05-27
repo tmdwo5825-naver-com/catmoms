@@ -21,8 +21,8 @@ function InputUpload({ onSubmitSuccess }){
         formdata.append("comment", enteredText); // 사용자가 입력한 텍스트
         formdata.append("image", event.target['image'].files[0], "20vt87.jpg");
         if (position) {
-            formdata.append("latitude", position.coords.latitude);
-            formdata.append("longitude", position.coords.longitude);
+            formdata.append("x", position.coords.latitude);
+            formdata.append("y", position.coords.longitude);
         }
 
         fetch("http://127.0.0.1:8000/content-create", {
@@ -62,9 +62,10 @@ function InputUpload({ onSubmitSuccess }){
     //업로드 버튼 클릭시 생성되는 박스
     return (
         <form className={classes.form} onSubmit={handleSubmit}>
+            <Geolocation onSuccess={setPosition} />
             <p>
                 <label htmlFor="name">Upload Cat Image</label>
-                <input type="file" name="file" id="file" />
+                <input type="file" name="image" />
             </p>
             <p>
                 <label htmlFor="name">This Cat Is</label>
