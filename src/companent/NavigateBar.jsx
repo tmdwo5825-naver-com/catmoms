@@ -6,7 +6,7 @@ import UploadBox from "./UploadBox";
 function NavigateBar(){
     const navigate = useNavigate();
     const to24 = () => {
-        navigate('/show-all');
+        navigate('/24hours');
     };
     const to3 = () => {
         navigate('/3hours');
