@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RootLayout from "./companent/routes/RootLayout";
-import MapShowAll from "./companent/MapShowAll";
 import IntroPage from "./companent/IntroPage";
 import Map2 from "./companent/Map2";
+import Map3Hour from "./companent/Map3Hour";
 
 const router = createBrowserRouter([
     { path: '/', element: <RootLayout />, children : [
             { path : '/', element: <IntroPage /> },
-            { path : '/3hours', element: <App /> },
-            { path: '/show-all', element: <MapShowAll />},
-            { path: '/map2', element: <Map2 />}
+            { path : '/3hours', element: <Map3Hour /> },
+            { path: '/24hours', element: <Map2 />}
         ]}
 
 

@@ -75,22 +75,22 @@ function Map3Hour() {
         setCountData(countData);
 
         const circles = [
-            { lat: 36.62785410610158, lng: 127.45313788589664, strokeColor: "red", fillColor: "red"},
-            { lat: 36.63054690049551, lng: 127.4568566387854, strokeColor: "blue",fillColor: "blue"},
-            { lat: 36.628825506703954, lng: 127.45738760306085, strokeColor: "orange", fillColor: "orange"},
-            { lat: 36.62473939898826, lng: 127.45889283917928, strokeColor: "green", fillColor: "green"}
+            { lat: 36.62819021028072, lng: 127.45361612914417, strokeColor: "orange", fillColor: "orange", radius : 200},//양성재 좌측하단 36.62656935117971, 127.4515271608071  /우측상단 36.62981656325492, 127.45543688761717
+            { lat: 36.63094320061501, lng: 127.45714296470376, strokeColor: "red",fillColor: "red", radius : 90},//개성재 좌측하단 36.63013839671825, 127.45610960893917  /우측상단 36.631698348276466, 127.458198409401
+            { lat: 36.629052242081166, lng: 127.4567740263603, strokeColor: "blue", fillColor: "blue", radius : 100},//솔못 좌측하단 36.62842402748002, 127.45551254530146  /우측상단 36.62989716070364, 127.45791941588986
+            { lat: 36.625140843044164, lng: 127.45807574430857, strokeColor: "green", fillColor: "green", radius : 150}//양진재  좌측하단 36.623792267078755, 127.45667591155414  /우측상단 36.62624935703808, 127.45979841801855
         ];
 
         circles.forEach((circleData, index) => {
             const circle = new kakao.maps.Circle({
                 center: new kakao.maps.LatLng(circleData.lat, circleData.lng),
-                radius: 100,
+                radius: circleData.radius,
                 strokeWeight: 2,
                 strokeColor: circleData.strokeColor,
-                strokeOpacity: 0.2,
+                strokeOpacity: 0.125,
                 strokeStyle: "line",
                 fillColor: circleData.fillColor,
-                fillOpacity: 0.4,
+                fillOpacity: 0.2,
             });
             circle.setMap(map);
 
