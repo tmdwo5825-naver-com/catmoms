@@ -9,14 +9,14 @@ const convertImageToCircle = async (imageUrl) => {
             const imageSize = 100; // 이미지 크기 (너무 크면 성능 저하됨)
             const borderWidth = 5; // 테두리 두께
 
-            canvas.width = imageSize + borderWidth * 2;
-            canvas.height = imageSize + borderWidth * 2;
+            canvas.width = imageSize + borderWidth;
+            canvas.height = imageSize + borderWidth ;
 
             context.beginPath();
             context.arc(
                 imageSize / 2 + borderWidth,
                 imageSize / 2 + borderWidth,
-                imageSize / 2,
+                imageSize / 3.7,
                 0,
                 2 * Math.PI
             );
@@ -24,7 +24,7 @@ const convertImageToCircle = async (imageUrl) => {
             context.clip();
 
             context.lineWidth = borderWidth;
-            context.strokeStyle = "yellow";
+            context.strokeStyle = "black";
             context.stroke();
 
             context.drawImage(
