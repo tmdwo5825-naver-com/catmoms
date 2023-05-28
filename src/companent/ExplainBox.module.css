@@ -49,7 +49,8 @@
 .form textarea {
     display: block;
     resize: none;
-    width: 90%;
+    width: 100%;
+    max-width: 78%;
     max-height: 20px;
     font: inherit;
     padding: 0.1rem 1rem 1rem 0rem;
@@ -91,9 +92,14 @@
 }
 
 .image {
-    margin: 0.1% 0 0 0.2%;
-    max-width: 99.5%;
-    max-height: 99.5%;
+    margin: 0.225% 0 0 0.5%;
+    max-width: 99%;
+    max-height: 99%;
     border-radius: 8px;
     object-fit: cover; /* 이미지를 비율을 유지하며 부모 요소에 꽉 채우도록 조정 */
+}
+
+.emoji{
+    float: left;
+    margin-top: 1px;
 }
