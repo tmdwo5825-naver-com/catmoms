@@ -29,15 +29,16 @@ function NavigateBar(){
                 <span className="material-icons">history</span>
                 <div>3시간</div>
             </button>
+            <button className={classes.bottomButton} onClick={handleButtonClick}>
+            <span className="material-icons">add</span>
+            <div>사진 추가</div>
+            </button>
+            {isOverlayOpen && <Modal onClose={handleOverlayClose}><UploadBox onSubmitSuccess={handleOverlayClose} /></Modal>}
             <button className={classes.bottomButton} onClick={to24}>
                 <span className="material-icons">today</span>
                 <div>24시간</div>
             </button>
-            <button className={classes.bottomButton} onClick={handleButtonClick}>
-                <span className="material-icons">add</span>
-                <div>사진 추가</div>
-            </button>
-            {isOverlayOpen && <Modal onClose={handleOverlayClose}><UploadBox onSubmitSuccess={handleOverlayClose} /></Modal>}
+
         </div>
     )
 }

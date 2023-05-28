@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import data from "../db/data.json";
+import data from "../db/data2.json";
 import Map from "./Map";
 import ExplainBox from "./ExplainBox";
 import ClearModal from "./ClearModal";
@@ -35,7 +35,7 @@ function MapShowAll() {
 
         const createMarker = async (item) => {
             const position = new kakao.maps.LatLng(item.y, item.x);
-            const markerImageUrl = await convertImageToCircle(item.imageUrl);//마커 이미지를 원으로 수정하여 설정
+            const markerImageUrl = await convertImageToCircle(item.url);//마커 이미지를 원으로 수정하여 설정
 
             const markerImage = new kakao.maps.MarkerImage(
                 markerImageUrl,

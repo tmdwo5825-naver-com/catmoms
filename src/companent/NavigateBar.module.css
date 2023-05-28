@@ -7,8 +7,10 @@
     left: 0;
     right: 0;
     height: 10vh;
-    background-color: #ffffff;
-    border-top: 1px solid #ddd;
+    background-color: ivory;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2.5px 0 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .bottomButton {
