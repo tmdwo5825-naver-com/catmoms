@@ -30,7 +30,7 @@ function ExplainBox({ marker, onCloseExplainBox }) {
             <div className={classes.form}>
                 <img ref={imageRef} src={marker.url} alt="Cat Image" className={classes.image}/>
                 <div className={classes.form2}>
-                    <p><label>Upload Time: {marker.uploadTime}</label></p>
+                    <p><label>Upload Time: {marker.created_at}</label></p>
                     <textarea value={marker.comment} readOnly />
                 </div>
             </div>

@@ -32,15 +32,15 @@ function Map3Hour() {
         map.setMinLevel(2);
 
         async function fetchData() {
-            const response = await fetch("http://127.0.0.1:8000/first-data"); // 첫 번째 데이터를 가져오는 엔드포인트
+            const response = await fetch("http://127.0.0.1:8000/3hours"); // FastAPI의 엔드포인트를 입력해야 합니다.
             const fetchedData = await response.json();
-            console.log("First data:", fetchedData);
-            return fetchedData;
+            console.log("Fetched data:", fetchedData);
+            return fetchedData.data; // JSON 객체 배열을 반환하도록 수정
         }
 
         // 어떤 작업을 할 때마다 마커를 추가
         async function createMarker(item) {
-            const position = new kakao.maps.LatLng(item.y, item.x);
+            const position = new kakao.maps.LatLng(item.x, item.y);
             const markerImageUrl = await convertImageToCircle(item.url);
 
             const markerImage = new kakao.maps.MarkerImage(
@@ -70,19 +70,21 @@ function Map3Hour() {
             { id: 1, count: 3 },
             { id: 2, count: 5 },
             { id: 3, count: 2 },
+            { id: 4, count: 10 }
         ];
         setCountData(countData);
 
         const circles = [
             { lat: 36.62785410610158, lng: 127.45313788589664, strokeColor: "red", fillColor: "red"},
             { lat: 36.63054690049551, lng: 127.4568566387854, strokeColor: "blue",fillColor: "blue"},
-            { lat: 36.628825506703954, lng: 127.45738760306085, strokeColor: "orange", fillColor: "orange"}
+            { lat: 36.628825506703954, lng: 127.45738760306085, strokeColor: "orange", fillColor: "orange"},
+            { lat: 36.62473939898826, lng: 127.45889283917928, strokeColor: "green", fillColor: "green"}
         ];
 
         circles.forEach((circleData, index) => {
             const circle = new kakao.maps.Circle({
                 center: new kakao.maps.LatLng(circleData.lat, circleData.lng),
-                radius: 120,
+                radius: 100,
                 strokeWeight: 2,
                 strokeColor: circleData.strokeColor,
                 strokeOpacity: 0.2,
