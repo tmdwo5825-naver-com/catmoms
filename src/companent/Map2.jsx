@@ -5,18 +5,28 @@ import NavigateBar from "./NavigateBar";
 import { convertImageToCircle } from "./CircleImage";
 import Map from "./Map";
 import classes from "./Map.module.css";
+import Modal from "./Modal";
+import InfoBox from "./InfoBox";
 
 /* global kakao */
 
 function Map2() {
     const [selectedMarker, setSelectedMarker] = useState(null);
-
+    const [IsOverlayOpen, SetIsOverlayOpen] = useState(false);
     const handleMarkerClick = (markerData) => {
         setSelectedMarker(markerData);
     };
 
     const closeExplainBox = () => {
         setSelectedMarker(null);
+    };
+
+    const handleButtonInfoClick = () => {
+        SetIsOverlayOpen(true);
+    };
+
+    const handleOverlayClose = () => {
+        SetIsOverlayOpen(false);
     };
 
     useEffect(() => {
@@ -94,6 +104,9 @@ function Map2() {
 
     return (
         <>
+            <button className={classes.infoButton} onClick={handleButtonInfoClick}>
+                <span className="material-icons">help</span></button>
+                {IsOverlayOpen && <Modal onClose={handleOverlayClose}><InfoBox /></Modal>}
             <Map onMarkerClick={handleMarkerClick} />
             <NavigateBar />
             {selectedMarker && (
