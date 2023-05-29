@@ -27,6 +27,21 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07), 0 3px 10px rgba(0, 0, 0, 0.07);
 }
 
+.infoButton {
+    position: absolute;
+    z-index: 9999;
+    bottom: 20%;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .countMarker {
     font : inherit;
     color: black;

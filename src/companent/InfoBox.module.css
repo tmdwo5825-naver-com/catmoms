@@ -48,13 +48,21 @@ main {
     color: #28262c;
 }
 
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28262c;
+}
 
+.text{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #28262c;
+}
 
-input[type=file]::file-selector-button {
-    width: 85px;
-    height: 25px;
-    background-color: white;
-    border: 0.01rem solid rgb(77,77,77);
-    border-radius: 10px;
-    cursor: pointer;
+.main{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28262c;
+    text-align: center;
 }
