@@ -30,17 +30,26 @@
     }
 }
 
+
 .text1 {
-    font-size: 450%;
-    font-weight: bold;
+    font-size: 29vw;
     color: #ffffff;
-    margin: 2px;
+    margin: 1px;
+    font-family: 'Nyala', sans-serif;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .text2 {
-    font-size: 125%;
-    font-weight: bold;
+    font-size: 27vw;
     color: #ffffff;
     margin-left: 10px;
     margin-top: 2px;
+    font-family: 'Nyala', sans-serif;
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
 }

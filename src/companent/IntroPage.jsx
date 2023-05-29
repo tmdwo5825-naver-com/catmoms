@@ -23,15 +23,16 @@ const IntroPage = () => {
             // navigate 함수를 사용하여 페이지 이동
             navigate('/3hours');
             localStorage.setItem('isFirstVisit', 'false');
-        }, 4000); // 4초 후 메인 페이지로 이동
+        }, 1700); // 4초 후 메인 페이지로 이동
 
         return () => clearTimeout(timer); // 컴포넌트가 unmount되면 타이머를 정리
     }, [navigate]);
 
     const textDivStyle = {
-        top: "10%",
-        left: "5%",
+        top: "30%",
+        left: "30%",
         position : "fixed",
+        transform: 'translate(-50%, -50%)',
     };
 
     return ( //디자인은 후에 바꿀것
@@ -41,9 +42,9 @@ const IntroPage = () => {
             }}
         >
             <div className={classes.background}> </div>
-            <div style={textDivStyle}>
-                <p className={classes.text1}>충냥이</p>
-                <p className={classes.text2}>고양이를 좋아하는 당신을 위해</p>
+            <div >
+                <p className={classes.text1}>Chuung</p>
+                <p className={classes.text2}>Nyann</p>
             </div>
 
         </div>
