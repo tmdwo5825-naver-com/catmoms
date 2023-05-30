@@ -103,13 +103,13 @@ function Map3Hour() {
             setFetchCount(fetchCount + 1);
         }
 
+        //캣타워 범위(원)
         const circles = [
             { lat: 36.62819021028072, lng: 127.45361612914417, strokeColor: "orange", fillColor: "orange", radius : 200},//양성재 좌측하단 36.62656935117971, 127.4515271608071  /우측상단 36.62981656325492, 127.45543688761717
             { lat: 36.63094320061501, lng: 127.45714296470376, strokeColor: "red",fillColor: "red", radius : 90},//개성재 좌측하단 36.63013839671825, 127.45610960893917  /우측상단 36.631698348276466, 127.458198409401
             { lat: 36.629052242081166, lng: 127.4567740263603, strokeColor: "blue", fillColor: "blue", radius : 100},//솔못 좌측하단 36.62842402748002, 127.45551254530146  /우측상단 36.62989716070364, 127.45791941588986
             { lat: 36.625140843044164, lng: 127.45807574430857, strokeColor: "green", fillColor: "green", radius : 150}//양진재  좌측하단 36.623792267078755, 127.45667591155414  /우측상단 36.62624935703808, 127.45979841801855
         ];
-
         circles.forEach((circleData, index) => {
             const circle = new kakao.maps.Circle({
                 center: new kakao.maps.LatLng(circleData.lat, circleData.lng),
@@ -123,6 +123,42 @@ function Map3Hour() {
             });
             circle.setMap(map);
 
+            //캣타워(마커)
+            const catTowerArea = [
+                {
+                    lat: 36.62819021028072,
+                    lng: 127.45361612914417,
+                    img: "yang.png",
+                },
+                {
+                    lat: 36.63094320061501,
+                    lng: 127.45714296470376,
+                    img: "Picture2.png",
+                },
+                {
+                    lat: 36.629052242081166,
+                    lng: 127.4567740263603,
+                    img: "yang.png",
+                },
+                {
+                    lat: 36.625140843044164,
+                    lng: 127.45807574430857,
+                    img: "Picture2.png",
+                },
+            ];
+
+            const tower = catTowerArea[index];
+            var imageSize = new kakao.maps.Size(100, 100);
+            var markerImage = new kakao.maps.MarkerImage(tower.img, imageSize);
+            if (tower) {
+                const catTowerMarker = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(tower.lat-0.00005, tower.lng),
+                    image: markerImage,
+                });
+                catTowerMarker.setMap(map);
+            }
+
+            //카운트
             const count = countData[index];
             if (count) {
                 const countMarker = new kakao.maps.CustomOverlay({
