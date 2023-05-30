@@ -45,5 +45,6 @@
 .countMarker {
     font : inherit;
     color: black;
-    opacity: 0.5;
+    opacity: 1;
+    margin-bottom: 50px;
 }
