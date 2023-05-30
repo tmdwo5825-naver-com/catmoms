@@ -29,7 +29,7 @@
 
 .infoButton {
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
     bottom: 20%;
     right: 20px;
     width: 50px;

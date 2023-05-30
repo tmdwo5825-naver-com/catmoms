@@ -21,8 +21,8 @@ function InputUpload({ onSubmitSuccess }){
         formdata.append("comment", enteredText); // 사용자가 입력한 텍스트
         formdata.append("image", event.target['image'].files[0], "20vt87.jpg");
         if (position) {
-            formdata.append("x", position.coords.latitude);
-            formdata.append("y", position.coords.longitude);
+            formdata.append("lat", position.coords.latitude);
+            formdata.append("lon", position.coords.longitude);
         }
 
         fetch("http://127.0.0.1:8000/content-create", {
