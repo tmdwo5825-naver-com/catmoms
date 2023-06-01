@@ -128,23 +128,23 @@ function Map3Hour() {
                 {
                     lat: 36.62819021028072,
                     lng: 127.45361612914417,
-                    img: "yang.png",
+                    img: "sungjae.png",
                 },
                 {
                     lat: 36.63094320061501,
                     lng: 127.45714296470376,
-                    img: "Picture2.png",
+                    img: "n14.png",
                 },
                 {
                     lat: 36.629052242081166,
                     lng: 127.4567740263603,
-                    img: "yang.png",
+                    img: "sol.png",
                 },
                 {
                     lat: 36.625140843044164,
                     lng: 127.45807574430857,
-                    img: "Picture2.png",
-                },
+                    img: "jinjae.png",
+                }
             ];
 
             const tower = catTowerArea[index];
