@@ -90,11 +90,8 @@ function Map3Hour() {
                 const newData = fetchedData["data2"].map(item => { // "data2"에 접근하여 변환
                     return { id: item.id, count: item.count };
                 });
-                console.log(newData);
                 setcountData(newData);
-                console.log("CountData :", countData);
             } catch (err) {
-                console.log(err);
             }
         }
 
@@ -105,10 +102,10 @@ function Map3Hour() {
 
         //캣타워 범위(원)
         const circles = [
-            { lat: 36.62819021028072, lng: 127.45361612914417, strokeColor: "orange", fillColor: "orange", radius : 200},//양성재 좌측하단 36.62656935117971, 127.4515271608071  /우측상단 36.62981656325492, 127.45543688761717
-            { lat: 36.63094320061501, lng: 127.45714296470376, strokeColor: "red",fillColor: "red", radius : 90},//개성재 좌측하단 36.63013839671825, 127.45610960893917  /우측상단 36.631698348276466, 127.458198409401
-            { lat: 36.629052242081166, lng: 127.4567740263603, strokeColor: "blue", fillColor: "blue", radius : 100},//솔못 좌측하단 36.62842402748002, 127.45551254530146  /우측상단 36.62989716070364, 127.45791941588986
-            { lat: 36.625140843044164, lng: 127.45807574430857, strokeColor: "green", fillColor: "green", radius : 150}//양진재  좌측하단 36.623792267078755, 127.45667591155414  /우측상단 36.62624935703808, 127.45979841801855
+            { lat: 36.62819021028072, lng: 127.45361612914417, strokeColor: "orange", fillColor: "orange", radius : 200, countLat: 36.62983005033518, countLon : 127.45367325655802 , name : "양성재 출몰횟수"},//양성재 좌측하단 36.62656935117971, 127.4515271608071  /우측상단 36.62981656325492, 127.45543688761717
+            { lat: 36.63094320061501, lng: 127.45714296470376, strokeColor: "red",fillColor: "red", radius : 90,countLat: 36.631679814841675, countLon :127.4571584963843, name : "N14 출몰횟수"},//개성재 좌측하단 36.63013839671825, 127.45610960893917  /우측상단 36.631698348276466, 127.458198409401
+            { lat: 36.629052242081166, lng: 127.4567740263603, strokeColor: "blue", fillColor: "blue", radius : 100, countLat:36.62986317675151, countLon :127.45679558279242, name : "솔못 출몰횟수"},//솔못 좌측하단 36.62842402748002, 127.45551254530146  /우측상단 36.62989716070364, 127.45791941588986
+            { lat: 36.625140843044164, lng: 127.45807574430857, strokeColor: "green", fillColor: "green", radius : 150, countLat:36.62645870618996, countLon :127.45808633792647, name : "양진재 출몰횟수"}//양진재  좌측하단 36.623792267078755, 127.45667591155414  /우측상단 36.62624935703808, 127.45979841801855
         ];
         circles.forEach((circleData, index) => {
             const circle = new kakao.maps.Circle({
@@ -122,48 +119,20 @@ function Map3Hour() {
                 fillOpacity: 0.2,
             });
             circle.setMap(map);
-
-            //캣타워(마커)
-            const catTowerArea = [
-                {
-                    lat: 36.62819021028072,
-                    lng: 127.45361612914417,
-                    img: "sungjae.png",
-                },
-                {
-                    lat: 36.63094320061501,
-                    lng: 127.45714296470376,
-                    img: "n14.png",
-                },
-                {
-                    lat: 36.629052242081166,
-                    lng: 127.4567740263603,
-                    img: "sol.png",
-                },
-                {
-                    lat: 36.625140843044164,
-                    lng: 127.45807574430857,
-                    img: "jinjae.png",
-                }
-            ];
-
-            const tower = catTowerArea[index];
-            var imageSize = new kakao.maps.Size(100, 100);
-            var markerImage = new kakao.maps.MarkerImage(tower.img, imageSize);
-            if (tower) {
-                const catTowerMarker = new kakao.maps.Marker({
-                    position: new kakao.maps.LatLng(tower.lat-0.00005, tower.lng),
-                    image: markerImage,
-                });
-                catTowerMarker.setMap(map);
-            }
+            // //테스트를 위한 더미 데이터
+            // const countData=[
+            //     {id:1,count:1},
+            //     {id:2,count:7},
+            //     {id:3,count:4},
+            //     {id:4,count:5}
+            // ];
 
             //카운트
             const count = countData[index];
             if (count) {
                 const countMarker = new kakao.maps.CustomOverlay({
-                    position: new kakao.maps.LatLng(circleData.lat, circleData.lng),
-                    content: `<div class="${classes.countMarker}">${count.count}</div>`,
+                    position: new kakao.maps.LatLng(circleData.countLat, circleData.countLon),
+                    content: `<div class="${classes.countMarker}">${count.count} <br/> ${circleData.name}</div>`,
                     zIndex: 1,
                 });
                 countMarker.setMap(map);
