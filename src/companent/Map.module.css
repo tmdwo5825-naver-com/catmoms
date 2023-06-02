@@ -43,9 +43,14 @@
 }
 
 .countMarker {
-    font : inherit;
-    color: black;
-    opacity: 1;
-    margin-bottom: 50px;
-    margin-left: 17%;
+    font-style: inherit;
+    font-size: 13px;
+    opacity: 0.9;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: pink;
+    padding: 5px;
 }
