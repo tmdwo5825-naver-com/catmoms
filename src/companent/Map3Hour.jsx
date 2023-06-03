@@ -49,7 +49,7 @@ function Map3Hour() {
         map.setMinLevel(2);
 
         async function fetchData() {
-            const response = await fetch("http://127.0.0.1:8000/3hours"); // FastAPI의 엔드포인트를 입력해야 합니다.
+            const response = await fetch("http://cbnu-cat-mom.koreacentral.cloudapp.azure.com/3hours"); // FastAPI의 엔드포인트를 입력해야 합니다.
             const fetchedData = await response.json();
             console.log("Fetched data:", fetchedData);
             return fetchedData.data; // JSON 객체 배열을 반환하도록 수정
@@ -58,7 +58,7 @@ function Map3Hour() {
         // 어떤 작업을 할 때마다 마커를 추가
         async function createMarker(item) {
             const position = new kakao.maps.LatLng(item.y, item.x);
-            const markerImageUrl = await convertImageToCircle(item.url);
+            const markerImageUrl = await convertImageToCircle(item.image_url);
 
             const markerImage = new kakao.maps.MarkerImage(
                 markerImageUrl,
@@ -85,7 +85,7 @@ function Map3Hour() {
 
         async function fetchCountData() {
             try {
-                const response = await fetch("http://127.0.0.1:8000/count");
+                const response = await fetch("http://cbnu-cat-mom.koreacentral.cloudapp.azure.com/count");
                 const fetchedData = await response.json(); // "data2" 대신 fetchedData 변수명 변경
                 const newData = fetchedData["data2"].map(item => { // "data2"에 접근하여 변환
                     return { id: item.id, count: item.count };
