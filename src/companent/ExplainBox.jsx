@@ -28,7 +28,7 @@ function ExplainBox({ marker, onCloseExplainBox }) {
     return (
         <div className={classes.container}>
             <div className={classes.form}>
-                <img ref={imageRef} src={marker.url} alt="Cat Image" className={classes.image}/>
+                <img ref={imageRef} src={marker.image_url} alt="Cat Image" className={classes.image}/>
                 <div className={classes.form2}>
                     <label>🐈 {marker.created_at}</label>
                     <hr width="100%"/>

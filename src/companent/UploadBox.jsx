@@ -30,7 +30,7 @@ function UploadBox({ onSubmitSuccess }) {
         }
 
         axios
-            .post("http://127.0.0.1:8000/content-create", formdata)
+            .post("http://cbnu-cat-mom.koreacentral.cloudapp.azure.com/content-create", formdata)
             .then((response) => {
                 if (response.data.status_code === 201) {
                     toast.success("파일 업로드가 성공적으로 되었습니다!");
@@ -66,7 +66,7 @@ function UploadBox({ onSubmitSuccess }) {
                 <Geolocation onSuccess={handleGeolocationSuccess} />
                 <p>
                     <label htmlFor="name">Upload Cat Image</label>
-                    <input type="file" name="image" accept=".jpg,.jpeg,.heic,.png"/>
+                    <input type="file" name="image" accept=".jpg,.jpeg,.png"/>
                 </p>
                 <p>
                     <label htmlFor="name">This Cat Is</label>
